@@ -1,0 +1,78 @@
+button,
+.btn {
+	text-align: center;
+	vertical-align: middle;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 16px;
+	min-height:60px;
+	padding: 21px 20px;
+	text-transform: uppercase;
+	background: transparent;
+	color: $darkgray;
+	border: 1px solid $darkgray;
+	border-radius: 0;
+	position: relative;
+	transition: all .3s ease-in-out;
+	width: 100%;
+	display: block;
+
+	&:hover,
+	&.active,
+	&:focus,
+	&--fill {
+		color: $white;
+		background: $darkgray;
+		opacity:1;
+	}
+
+	&.disabled,
+	&[disabled="disabled"],
+	&[disabled] {
+		background: #ccc;
+		color: #aaa;
+		cursor: not-allowed;
+	}
+
+	&--white {
+		border-color: $white;
+		color: $white;
+		font-family: $secondFont;
+		font-weight: 900;
+
+		&:hover
+		&.active,
+		&:focus,
+		.btn--fill {
+			background: $white;
+			color: $darkgray;
+		}
+	}
+	&.btn--close {
+		width: 24px;
+		height: 25px;
+		background: transparent;
+		display: block;
+		cursor: pointer;
+		min-height: 0;
+		padding: 0;
+		line-height: 0;	
+		font-size: 0;
+		box-shadow: none;
+		border: 0;
+		z-index: 9999;
+		svg{
+			display:block;
+			max-width:100%;
+			max-height:100%;
+			transition:fill .15s ease-in-out;
+		}
+		&:hover {
+			opacity:1;
+			background:transparent;
+			svg {
+				fill:#EA5C5C;
+			}
+		}
+	}
+}

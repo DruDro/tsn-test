@@ -1,0 +1,103 @@
+.latest {
+    &__categories, &__sales {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+    &__link {
+        position:relative;
+        background-color:rgba(#222533,.7);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: all .3s ease-in-out;
+        min-height: 418px;
+        text-align: center;
+        display: flex;
+        flex: 1 1 240px;
+        margin: 15px;
+        padding:35px 30px;
+        flex-direction: column;
+        justify-content: center;
+        font-size:40px;
+        font-family: $mainFont;
+        font-style:italic;
+        font-weight:300;
+        line-height:normal;
+        color:#fff;
+        z-index:0;
+        span{
+            position:relative;
+            z-index: 2;
+        }
+        &:before{
+            position:absolute;
+            width:100%;
+            height: 100%;
+            display:block;
+            content:"";
+            left:0;
+            top:0;
+            background: #222533;
+            opacity:.7;
+            z-index:1;
+            transition:all .2s ease-in-out;
+        }
+        &:after {
+            content:"";
+            display:block;
+            position:absolute;
+            width:calc(100% - 54px);
+            height:calc(100% - 64px);
+            border:3px solid $white;
+            z-index:2;
+            top:32px;
+            left:27px;
+            transition:all .2s ease-in-out;
+
+        }
+        &:hover,&:focus {
+            opacity:1;
+            &:before {
+                opacity:.15;
+            }
+            &:after {
+                border-width:1px;
+                opacity:.5;
+            }
+        }
+        &:active {
+            &:after {
+                width:100%;
+                height:100%;
+                left:0;
+                top:0;
+                border-width:32px 27px;
+                opacity:.15;
+            }
+        }
+    }
+    &__sales &__link {
+        font-size:45px;
+        font-family: $secondFont;
+        font-style:normal;
+        font-weight: 700;
+        line-height: normal;
+        background-color:rgba(#222533, .4);
+        &:after {
+            opacity:0;
+        }
+        &:before {
+            opacity:.4;
+        }
+        &:hover,&:focus {
+            &:before {
+                opacity:.7;
+            }
+            &:after {
+                opacity:1;
+            }
+        }
+    }
+}

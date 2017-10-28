@@ -1,0 +1,77 @@
+//----------------------------------------------------//
+// LAYOUT                                             //
+//----------------------------------------------------//
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	outline:0;
+}
+
+body {
+	height: 100%;
+	min-width: 320px;
+	overflow-y:auto;
+	overflow-x: hidden;
+}
+
+.container {
+	padding: 0 15px;
+	width: 1200px;
+	max-width:100%;
+	margin: 0 auto; 
+	@include clearfix;
+}
+
+
+//----------------------------------------------------//
+// BREAKPOINT HELPERS                                 //
+//----------------------------------------------------//
+
+
+.hidden {
+	display:none !important;
+}
+.visible {
+	display:block !important;
+}
+.desktop-hidden {
+	@include b(desktop) {
+		display:none !important;
+	}
+}
+.desktop-visible {
+	@include b(desktop) {
+		display:block !important;
+	}
+}
+.tablet-hidden {
+	@include b(tablet) {
+		display:none !important;
+	}
+}
+.tablet-visible {
+	@include b(tablet) {
+		display:block !important;
+	}
+}
+.mobile-hidden {
+	@include b(mobile) {
+		display:none !important;
+	}
+}
+.mobile-visible {
+	@include b(mobile) {
+		display:block !important;
+	}
+}
+.min-hidden {
+	@include b(min) {
+		display:none !important;
+	}
+}
+.min-visible {
+	@include b(min) {
+		display:block !important;
+	}
+}
